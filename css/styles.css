@@ -1,15 +1,19 @@
 body,html{
     padding: 0;
     margin: 0;
+    background-color: #F7FFF7;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .columns{
     display: flex;
+    width: min(1200px,100vw);
+    margin: 0 auto;
     height: 100vh;
 }
 .col1{
-    flex:2;
+    flex:1;
     display: flex;
+    height: 100vh;
     flex-direction: column;
     background-color: red;
     background-image: url(/images/background.webp);
@@ -21,8 +25,8 @@ body,html{
     display: flex;
     color: white;
     position: relative;
-    top: 10vh;
-    height: 10vw;
+    top: 20vh;
+    height: 12vh;
     width: 100%;
     background-color: rgb(255,255,255, 0.9);
     align-items: center;
@@ -47,12 +51,12 @@ body,html{
     flex:3;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     background-color: lightgrey;
+    justify-content: center;
 }
 .col2 h2, .col2 p{
     padding-left: 2rem;
-    padding-right: 2rem;
+    padding-right: 9rem;
 }
 .col2 button{
     display: flex;
@@ -66,18 +70,42 @@ body,html{
     border: 0;
 }
 .formwrapper{
-    background-color: white;
-}
-.formwrapper > *{
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
+    background-color: white;
     padding: 2rem;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
 }
 fieldset{
     display: flex;
-    flex-direction: column;
-    border: 0;
     padding: 0;
+    border: 0;
     margin: 0;
+    width: 80%;
+    height: 250px;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+input, label, legend{
+    margin-bottom: 0.25rem;
+    height: 32px;
+    padding-left: 5px;
+    width: min(25vw, 15rem);
+    margin-right: 2rem;
+}
+@media screen and (max-width:768px) {
+    .columns {
+        display: flex;
+        flex-direction: column;
+    }
+    .logo{
+        display: flex;
+    }
+    fieldset{
+        width: 100%;
+        flex-wrap: nowrap;
+        justify-content: center ;
+    }
+ 
 }
