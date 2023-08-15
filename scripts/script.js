@@ -3,6 +3,8 @@ console.log("Hello World");
 // validation script here
 
 const patterns = {
+    firstname: /^\w[^\d]{1,}$/,
+    lastname: /^\w[^\d]{1,}$/,
 	phone: /^\d{11}$/, // must be 11 characters long and digits only
 	password: /^[\w@-]{8,20}$/i,// alphanumeric @,_ and - are allowed, case insensitive, 8 to 20 chars long
 	email: /^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$/
