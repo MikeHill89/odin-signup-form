@@ -70,6 +70,12 @@ input{
 input:active, input:focus{
     border: 1px solid orange;
 }
+input.valid{
+    border-color: #2a7561;
+}
+input.error{
+    border-color:var(--accent-color);
+}
 .credits{
     font-size: 0.75rem;
 }
