@@ -35,6 +35,10 @@ function validate(field,regex){
 inputs.forEach((input) => {
 	input.addEventListener('keyup', (e) =>{
 		//console.log(e.target.attributes.name.value);
+        if (!input.value){
+            input.className = "";
+        } else {
 		validate(e.target,patterns[e.target.attributes.name.value])
+    }
 	});
 });

@@ -68,7 +68,8 @@ input{
     border: 1px solid lightgrey;
 }
 input:active, input:focus{
-    border: 1px solid orange;
+    border: 1px solid darkblue;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
 }
 input.valid{
     border-color: #2a7561;
