@@ -1,43 +1,79 @@
+/* Fonts, Colors and Background*/
+@font-face {
+    font-family: Poppins;
+    src: url(/fonts/Poppins-Regular.woff2);
+  }
+:root{
+    --accent-color: #FF3864;
+    --color-one: #FFFFFF;
+    --color-two: #2a7561;
+    --color-three: #2B2D42;
+    --color-four: #FFFDF7;
+    --bg-image: url(/images/background.webp);
+}
 body,html{
     padding: 0;
     margin: 0;
-    background-color: #F7FFF7;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: var(--color-one);
+    font-family:'Poppins';
+    font-size: 1rem;
+}
+.logo img{
+    width: 100px;
+    filter: invert(100%) sepia(99%) saturate(0%) hue-rotate(14deg) brightness(103%) contrast(100%);
+}   
+.col2 button{
+    background-color: var(--color-two);
+    color: var(--color-one);
+    border: 0;
+    font-size: 1rem;
+    border-radius: 5px;
 }
 .col1{
-    background-image: url(/images/background.webp);
+    background-image: var(--bg-image);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
 }
-.col1 img{
-    filter: invert(100%);
-}   
 .credits, .credits a{
-    color: white;
+    color: var(--color-one);
     display: flex;
     justify-content: center;
+    text-align: center;
     margin-top: auto;
     padding-bottom: 0.3rem;
 }
 .col2{
-        background-color: lightgrey;
+        background-color: rgb(240, 240, 240);
         flex-grow: 1;
 }
-.col2 button{
-        background-color: darkslategray;
-        color: white;
-        border-radius: 5px;
-        border: 0;
+.formwrapper{
+    background-color: var(--color-one);
 }
 legend{
     font-weight: 600;
 }
+h2, p, label, input, legend,fieldset{
+    color: var(--color-three);
+}
 p a{
     font-weight: 600;
     text-decoration: none;
-    color: darkslategray;
+    color: var(--color-two);
 }
+input{
+    padding-left: 7px; 
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid lightgrey;
+}
+input:active, input:focus{
+    border: 1px solid orange;
+}
+.credits{
+    font-size: 0.75rem;
+}
+/*Mobile CSS */
 @media screen and (max-width: 768px) {
     .columns{
         display: flex;
@@ -54,21 +90,18 @@ p a{
     .logo{
         display: flex;
         padding: 0;
-        margin: 0 ;
+        margin: 0;
+        width: 100%;
         justify-content: center;
     }
     .logo img{
-        width: 70%;
-    }
-    .credits{
-        font-size: 0.75rem;
+        width: 50%;
     }
     .col2 h2, .col2 p{
         padding-left: 1rem;
         padding-right: 1rem;
     }
     .formwrapper{
-        background-color: white;
         padding-top: 1rem;
         padding-bottom: 1rem;
         margin-bottom: 1rem;
@@ -84,9 +117,6 @@ p a{
     }
     input{
         line-height: 2rem;
-        padding-left: 8px;
-        border-radius: 5px;
-        border: 1px solid lightgrey;
     }
     .col2{
         display: flex;
@@ -96,7 +126,6 @@ p a{
         display: flex;
         justify-content: center;
         padding: 1rem;
-        background-color: darkslategray;
         color: white;
         border-radius: 5px;
         margin: 1rem;
@@ -107,6 +136,7 @@ p a{
         justify-content: center;
     }
 }
+/*Tablet and desktop CSS*/
 @media screen and (min-width: 769px){
     .columns{
         display: flex;
@@ -122,12 +152,9 @@ p a{
     }
     .logo{
         display: flex;
-        color: white;
         position: relative;
         top: 20vh;
         height: 12vh;
-        width: 100%;
-        background-color: rgba(41, 41, 41, 0.9);
         align-items: center;
         justify-content: center;
     }
@@ -155,7 +182,6 @@ p a{
       
     }
     .formwrapper{
-        background-color: white;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -175,11 +201,8 @@ p a{
     input, label, legend{
         margin-bottom: 0.25rem;
         height: 32px;
-        padding-left: 0px;
         width: min(25vw, 15rem);
         margin-right: 2rem;
     }
-    input{
-        padding-left: 8px;
-    }
+
 }
