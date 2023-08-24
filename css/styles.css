@@ -1,7 +1,7 @@
 /* Fonts, Colors and Background*/
 @font-face {
     font-family: Poppins;
-    src: url(./fonts/Poppins-Regular.woff2);
+    src: url(https://mikehill89.github.io/fonts/Poppins-Regular.woff2);
   }
 :root{
     --accent-color: #FF3864;
