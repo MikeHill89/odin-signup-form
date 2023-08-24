@@ -19,26 +19,39 @@
             </div>
         </div>
         <div class="col2">
-           <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, molestiae?</h2> 
-        <h2>Dolor sit!</h2>
+            <div class="headertext">
+                <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, molestiae?</h2> 
+            </div>
         <div class="formwrapper">
-            <form action="submit" method="post">
+            <form action="#" method="post">
                 <legend>Lorem ipsum!</legend>
                 <fieldset>
-                    <label for="firstname">First Name</label>
-                    <input type="text" name="firstname" id="firstname">
-                    <label for="lastname">Last Name</label>
-                    <input type="text" name="lastname" id="lastname">
-                    <label for="email">Email</label>
-                    <input type="email" name="email" id="email">
-                    <label for="phone">Phonenumber</label>
-                    <input type="phone" name="phone" id="phone">
-                    <label for="password">Password</label>
-                    <input type="password" name="password" id="password">
-                    <label for="confirmpwd">Confirm Password</label>
-                    <input type="password" name="confirmpwd" id="confirmpwd">
+                    <div class="left">
+                        <label for="firstname">First Name</label>
+                        <input type="text" name="firstname" id="firstname">
+                        <p>Must be 2 letters minimum</p> 
+                         <label for="phone">Phonenumber</label>
+                        <input type="phone" name="phone" id="phone">
+                        <p>Phonenumber must be 11 digits</p>
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password">
+                        <p>Must be 8-20 characters long and alphanumeric(@,_ and - are also allowed)</p>
+                    </div>
+                    <div class="right">
+                         <label for="lastname">Last Name</label>
+                        <input type="text" name="lastname" id="lastname">
+                        <p>Must be 2 letters minimum</p> 
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email">
+                        <p>For example: yourname@mail.com</p>  
+                        <label for="confirmpwd">Confirm Password</label>
+                        <input type="password" name="confirmpwd" id="confirmpwd">
+                        <p>Passwords must match</p>
+                    </div>
                 </fieldset>
             </form>
         </div>
             <button type="submit">Create Account</button>
-        <p>Already have an account?<a href="#">Log in</a> 
+        <p>Already have an account?&nbsp;<a href="#">Log in</a> 
+</body>
+</html>

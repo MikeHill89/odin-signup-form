@@ -18,16 +18,23 @@ body,html{
     font-family:'Poppins';
     font-size: 1rem;
 }
+h2{
+    font-size: 1.25rem;
+}
 .logo img{
     width: 100px;
     filter: invert(100%) sepia(99%) saturate(0%) hue-rotate(14deg) brightness(103%) contrast(100%);
 }   
 .col2 button{
-    background-color: var(--color-two);
+    background-color: var(--accent-color);
     color: var(--color-one);
     border: 0;
     font-size: 1rem;
     border-radius: 5px;
+}
+.col2 button:hover{
+    background-color: #2a7561;
+    cursor: pointer;
 }
 .col1{
     background-image: var(--bg-image);
@@ -59,6 +66,9 @@ h2, p, label, input, legend,fieldset{
 p a{
     font-weight: 600;
     text-decoration: none;
+    color: var(--accent-color);
+}
+p a:hover{
     color: var(--color-two);
 }
 input{
@@ -74,8 +84,22 @@ input:active, input:focus{
 input.valid{
     border-color: #2a7561;
 }
+input + p{
+    margin: 4px; 
+    width: 0;
+    height: 0;
+    padding:0;
+    color: #999999;
+    border:0;
+}
 input.error{
     border-color:var(--accent-color);
+}
+input.error + p{
+    border:0;
+    color:#FF3864;
+    padding: 0;
+    margin: 4px;
 }
 .credits{
     font-size: 0.75rem;
@@ -85,49 +109,30 @@ input.error{
     .columns{
         display: flex;
         flex-direction: column;
+        gap: 0;
+        margin: 0;
+        padding: 0;
+        width: 100vw;
         height: 100vh;
     }
     .col1{
         display: flex;
-        flex: 0.2;
+        width: 100vw;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
-    }
-    .logo{
-        display: flex;
-        padding: 0;
-        margin: 0;
-        width: 100%;
         justify-content: center;
     }
     .logo img{
-        width: 50%;
-    }
-    .col2 h2, .col2 p{
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
-    .formwrapper{
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        margin-bottom: 1rem;
-    }
-    fieldset{
-        display: flex;
-        flex-direction: column;
-        border: 0;
-        line-height: 2rem;
-    }
-    legend{
-        padding-left: 1rem;
-    }
-    input{
-        line-height: 2rem;
+        width: 200px;
     }
     .col2{
         display: flex;
+        flex: 1;
+        width: 100vw;
         flex-direction: column;
+    }
+    .col2 > * {
+        padding: 1rem;
     }
     .col2 button{
         display: flex;
@@ -138,22 +143,53 @@ input.error{
         margin: 1rem;
         border: 0;
     }
-    .col2 p{
+    .formwrapper{
         display: flex;
-        justify-content: center;
+        width: calc(100vw - 2rem);
+        flex-direction: column; 
+        padding: 1rem;
+        margin: 0;
+    } 
+    form{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+    }
+    fieldset{
+        display: flex;
+        flex-direction: column;
+        border: 0;
+        padding: 0;
+        margin: 0;
+    }
+    form input{
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        width: 100%;
+        box-sizing: border-box;
+        height: 40px;
+    }
+    input + p{
+        height: auto;
+        font-size: 0.75rem;
+        padding: 0;
+        margin-top: 5px;
+        width: 100%;
     }
 }
 /*Tablet and desktop CSS*/
 @media screen and (min-width: 769px){
     .columns{
         display: flex;
-        width: min(1200px,100vw);
         margin: 0 auto;
+        width: 100vw;
         height: 100vh;
     }
     .col1{
         flex:1;
         display: flex;
+        width: 20vw;
         height: 100vh;
         flex-direction: column;
     }
@@ -173,12 +209,12 @@ input.error{
     .col2{
         flex:3;
         display: flex;
+        width: 80vw;
         flex-direction: column;
         justify-content: center;
     }
-    .col2 h2, .col2 p{
-        padding-left: 2rem;
-        padding-right: 9rem;
+    .col2 > * {
+        padding: 2rem;
     }
     .col2 button{
         display: flex;
@@ -190,26 +226,35 @@ input.error{
     }
     .formwrapper{
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 2rem;
+        max-width: 80vw;
         box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
     }
-    fieldset{
+    form{
         display: flex;
+        flex-direction: column;
+        gap:2rem;
+    }
+    .headertext{
+        width: 30vw;
+    }
+    fieldset{
+        width: 25vw;
+        display:flex;
+        justify-content: space-between; 
         padding: 0;
         border: 0;
         margin: 0;
-        width: 80%;
-        height: 250px;
+        gap: 2rem;
+    }
+    fieldset > *{
+        display: flex;
         flex-direction: column;
-        flex-wrap: wrap;
     }
-    input, label, legend{
-        margin-bottom: 0.25rem;
-        height: 32px;
-        width: min(25vw, 15rem);
-        margin-right: 2rem;
+    fieldset input, fieldset p, fieldset label{
+        width: clamp(250px, 15vw + 1rem,250px);
+        height: 2rem;
     }
-
+    fieldset p{
+        font-size: 0.75rem;
+    }
 }
