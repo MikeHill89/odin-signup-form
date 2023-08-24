@@ -9,7 +9,7 @@
     --color-two: #2a7561;
     --color-three: #2B2D42;
     --color-four: #FFFDF7;
-    --bg-image: url(../images/background.webp);
+    --bg-image: url(/images/background.webp);
 }
 body,html{
     padding: 0;
