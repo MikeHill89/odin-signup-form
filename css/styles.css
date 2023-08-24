@@ -1,7 +1,7 @@
 /* Fonts, Colors and Background*/
 @font-face {
     font-family: Poppins;
-    src: url(/fonts/Poppins-Regular.woff2);
+    src: url(./fonts/Poppins-Regular.woff2);
   }
 :root{
     --accent-color: #FF3864;
@@ -9,7 +9,7 @@
     --color-two: #2a7561;
     --color-three: #2B2D42;
     --color-four: #FFFDF7;
-    --bg-image: url(/images/background.webp);
+    --bg-image: url(./images/background.webp);
 }
 body,html{
     padding: 0;
@@ -163,7 +163,6 @@ input.error + p{
         margin: 0;
     }
     form input{
-        display: flex;
         flex-direction: column;
         margin: 0;
         width: 100%;
@@ -177,6 +176,7 @@ input.error + p{
         margin-top: 5px;
         width: 100%;
     }
+
 }
 /*Tablet and desktop CSS*/
 @media screen and (min-width: 769px){
